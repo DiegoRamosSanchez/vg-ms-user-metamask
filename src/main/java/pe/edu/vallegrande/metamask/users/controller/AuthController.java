@@ -15,6 +15,7 @@ import reactor.core.publisher.Mono;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
 public class AuthController {
