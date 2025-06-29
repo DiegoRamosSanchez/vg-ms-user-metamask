@@ -1,0 +1,31 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: quickcash-backend
+  r2dbc:
+    url: r2dbc:postgresql://ep-fragrant-hall-a8lodyqg-pooler.eastus2.azure.neon.tech/MetaMask?sslmode=require&prepareThreshold=0&preparedStatementCacheQueries=0
+    username: MetaMask_owner
+    password: npg_h8re9GzvACJk
+    pool:
+      initial-size: 5
+      max-size: 10
+      max-idle-time: 10m
+      max-life-time: 30m
+      max-acquire-time: 60s
+      max-create-connection-time: 60s
+      validation-query: SELECT 1
+      validation-depth: LOCAL
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+logging:
+  level:
+    com.quickcash: DEBUG
+    org.springframework.r2dbc: DEBUG
+    io.r2dbc.postgresql.QUERY: DEBUG
+    io.r2dbc.postgresql.PARAM: DEBUG
+    root: INFO
